@@ -36,7 +36,7 @@ public class ValidationService implements JavaDelegate {
 
         System.out.println(userReq.getUsername());
 
-        delegateExecution.setVariable("userVal",true);
+
 
         IdentityService identityService = delegateExecution.getProcessEngine().getIdentityService();
 
@@ -49,6 +49,8 @@ public class ValidationService implements JavaDelegate {
         userReq.setPassword("");
         delegateExecution.setVariable("signUp",userReq);
 
+        System.out.println(userReq.isReviewer());
+
         userReq.setReviewer(false);
 
         userService.checkUser(userReq);
@@ -59,6 +61,7 @@ public class ValidationService implements JavaDelegate {
         userService.saveToDBWithRole(userReq,"user");
 
 
+        delegateExecution.setVariable("userVal",true);
         identityService.saveUser(user);
         identityService.createMembership(userReq.getUsername(),"user");
     }
