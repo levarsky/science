@@ -1,0 +1,64 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-12">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Editors and Reviewers</h5>
+          <form [formGroup]="userGroup">
+
+
+            <br>
+
+            <h6 class="text-center">Editors</h6>
+
+            <div class="form-label-group">
+
+              <select multiple class="form-control" id="editorSelect" [formControlName]="'editors'">
+                <option *ngFor="let ed of editors"
+                        [value]="ed"> {{ed.firstName}}  {{ed.lastName}}</option>
+              </select>
+            </div>
+
+            <hr>
+
+            <br>
+
+            <h6 class="text-center">Reviewers</h6>
+
+            <div class="form-label-group">
+
+              <select multiple class="form-control" id="reviewerSelect" [formControlName]="'reviewers'">
+                <option *ngFor="let rev of reviewers"
+                        [value]="rev"> {{rev.firstName}}  {{rev.lastName}} </option>
+              </select>
+            </div>
+
+
+            <br>
+
+            <div class="alert alert-danger" *ngIf="failed==true">{{errorMessage}}</div>
+
+
+            <br>
+
+            <button class="btn btn-sm btn-primary btn-block text-uppercase" (click)="onSubmit()">
+              Submit
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row d-flex justify-content-center">
+
+    <h3>{{message}}</h3>
+
+  </div>
+
+</div>

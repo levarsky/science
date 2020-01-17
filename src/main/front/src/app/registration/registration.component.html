@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div *ngIf="signUpIsVisible" class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign Up</h5>
+          <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-label-group">
+              <label for="firstName">First Name</label>
+              <input type="text" maxlength="30" id="firstName" class="form-control"
+                     [formControlName]="'firstName'" required autofocus>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('firstName').errors?.required && signUpForm.get('firstName').touched">First
+                name is required
+              </div>
+
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" maxlength="30" id="lastName" class="form-control"
+                     [formControlName]="'lastName'" required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('lastName').errors?.required && signUpForm.get('lastName').touched">Last name
+                is required
+              </div>
+
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="state">State</label>
+              <input type="text" maxlength="30" id="state" class="form-control"
+                     [formControlName]="'state'" required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('state').errors?.required && signUpForm.get('state').touched">State
+                is required
+              </div>
+
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="city">City</label>
+              <input type="text" maxlength="30" id="city" class="form-control"
+                     [formControlName]="'city'" required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('city').errors?.required && signUpForm.get('city').touched">City
+                is required
+              </div>
+
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="title">Title</label>
+              <input type="text" id="title" class="form-control"
+                     [formControlName]="'title'">
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="userName">Username</label>
+              <input type="text" maxlength="15" id="userName" class="form-control"
+                     [formControlName]="'username'" required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('username').errors?.required && signUpForm.get('username').touched">Username is
+                required
+              </div>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('username').errors?.pattern && signUpForm.get('username').touched">Only
+                letters, numbers and _
+              </div>
+
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="inputEmail">Email address</label>
+              <input type="email" id="inputEmail" class="form-control" [formControlName]="'email'" required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('email').errors?.required && signUpForm.get('email').touched">Email is required
+              </div>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('email').errors?.email && signUpForm.get('email').touched">Invalid email
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" id="inputPassword" class="form-control" [formControlName]="'password'" required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('password').errors?.required && signUpForm.get('password').touched">Password is
+                required
+              </div>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('password').errors?.pattern && signUpForm.get('password').touched">Only
+                letters, numbers and ! ? # * / _
+              </div>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('password').errors?.minlength && signUpForm.get('password').touched">Password
+                must be at least 8 characters
+              </div>
+            </div>
+
+            <div class="form-label-group">
+              <label for="confirmedPassword">Confirm Password</label>
+              <input type="password" id="confirmedPassword" class="form-control" [formControlName]="'passwordConfirm'"
+                     required>
+              <div class="alert alert-danger"
+                   *ngIf="signUpForm.get('passwordConfirm').errors?.pattern && signUpForm.get('passwordConfirm').touched">
+                Only letters, numbers and ! ? # * / _
+              </div>
+
+            </div>
+
+            <div class="mt-2"></div>
+
+            <div class="alert alert-danger"
+                 *ngIf="signUpForm.controls.passwordConfirm.errors?.required && signUpForm.controls.passwordConfirm.touched">
+              Confirm password !
+            </div>
+            <div class="alert alert-danger" *ngIf="signUpForm.errors?.doesMatchPassword">Password does not match</div>
+
+            <div class="form-label-group">
+              <label for="reviewer">Reviewer</label>
+              <input type="checkbox" id="reviewer" class="form-control"
+                     [formControlName]="'reviewer'">
+            </div>
+
+            <br>
+
+            <div class="alert alert-danger" *ngIf="failed==true">{{errorMessage}}</div>
+
+            <br>
+
+            <hr class="my-4">
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit"
+                    [disabled]="!signUpForm.valid">Next
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="fieldIsVisible">
+    <app-field-add (objectToEmmit)="objectToReceive($event)"></app-field-add>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+
+    <h3>{{message}}</h3>
+
+  </div>
+
+
+</div>

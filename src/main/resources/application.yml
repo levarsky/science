@@ -1,0 +1,39 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_camunda?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password: adminadmin
+  jpa:
+    hibernate.ddl-auto: update
+
+  mail:
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    username: projectftnemail@gmail.com
+    password: Passprojects1
+
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: false
+
+
+camunda:
+  bpm:
+    authorization:
+      enabled: true
+    filter:
+      create: All tasks
+    admin-user:
+      id: admin
+      password: adminadmin
+server:
+  port: 8090
+  servlet:
+    context-path: /science
+

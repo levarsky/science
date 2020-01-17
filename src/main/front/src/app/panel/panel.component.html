@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <div id="navigation">
+        <nav class="nav navPar">
+          <a *ngIf="isAdmin" class="nav-link active hrefColor" [routerLink]="['adminpanel']" active>Admin panel</a>
+          <a *ngIf="isEditor" class="nav-link hrefColor" [routerLink]="['magazine']">New Magazine </a>
+          <a *ngIf="isEditor || isAdmin" class="nav-link hrefColor" [routerLink]="['magazineTasks']">Magazines</a>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col">
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+  </div>
+
+</div>

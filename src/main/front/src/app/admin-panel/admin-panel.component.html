@@ -1,0 +1,59 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col">
+
+      <div class="card">
+
+        <div class="card-header">
+          <div class="d-flex">
+            <div>
+              {{title}}
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrapper-scroll-y my-custom-scrollbar" id="certs">
+
+          <table class="table mb-0 table-hover">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">FirstName</th>
+              <th scope="col">LastName</th>
+              <th scope="col">State</th>
+              <th scope="col">City</th>
+              <th scope="col">Email</th>
+              <th scope="col">Username</th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let task of tasks; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{task.variable.user.firstName}}</td>
+              <td>{{task.variable.user.lastName}}</td>
+              <td>{{task.variable.user.state}}</td>
+              <td>{{task.variable.user.city}}</td>
+              <td>{{task.variable.user.email}}</td>
+              <td>{{task.variable.user.username}}</td>
+              <td (click)="enable(task.id);">
+                <button class="btn"><i class="fas fa-check"></i></button>
+              </td>
+              <td (click)="disable(task.id);">
+                <button class="btn"><i class="fas fa-times"></i></button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+

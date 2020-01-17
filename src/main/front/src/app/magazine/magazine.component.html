@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col">
+
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{magTitle}}</h5>
+          <form [formGroup]="magazineGroup">
+
+            <div class="form-label-group">
+              <label for="issn">ISSN</label>
+              <input type="text" id="issn" class="form-control"
+                     [formControlName]="'issn'" required autofocus>
+
+            </div>
+
+            <div class="form-label-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" class="form-control"
+                     [formControlName]="'name'" required autofocus>
+
+            </div>
+
+            <br>
+
+            <hr>
+
+            <h6 class="text-center">Fields</h6>
+
+            <!--          <div class="form-label-group">-->
+
+            <!--            <div formArrayName="fields">-->
+
+            <!--              <div *ngFor="let field of fields.controls;let fieldIndex=index" [formGroupName]="fieldIndex">-->
+
+            <!--                <label>Field</label>-->
+            <!--                <div class="input-group">-->
+            <!--                  <input type="text" class="form-control" [formControlName]="'name'">-->
+            <!--                  <button class="btn btn-sm btn-secondary" type="button" (click)="deleteField(fieldIndex)">Delete field-->
+            <!--                  </button>-->
+            <!--                </div>-->
+
+            <!--              </div>-->
+            <!--            </div>-->
+            <!--          <br>-->
+            <!--          <button class="btn btn-sm btn-secondary" (click)="addField()">Add field-->
+            <!--          </button>-->
+
+            <!--      </div>-->
+
+
+            <div class="form-label-group">
+              <label for="fieldSelect">Fields</label>
+              <select multiple class="form-control" id="fieldSelect" [formControlName]="'fields'">
+                <option *ngFor="let payment of allFields"
+                        [value]="payment"> {{payment.name}} </option>
+              </select>
+            </div>
+
+            <hr>
+
+            <br>
+
+            <div class="form-label-group">
+              <label for="paymentSelect">Payment type</label>
+              <select multiple class="form-control" id="paymentSelect" [formControlName]="'paymentTypes'">
+                <option *ngFor="let payment of paymentType"
+                        [value]="payment"> {{payment.name}} </option>
+              </select>
+            </div>
+
+            <br>
+
+            <div class="alert alert-danger" *ngIf="failed==true">{{errorMessage}}</div>
+
+            <br>
+
+            <button class="btn btn-sm btn-primary btn-block text-uppercase" (click)="onSubmit()">
+              Submit magazine
+            </button>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

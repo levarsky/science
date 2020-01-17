@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card ">
+        <div class="card-body">
+          <h5 class="card-title text-center">Sign In</h5>
+          <form class="form-signin" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-label-group">
+              <label for="inputUsername">Username</label>
+              <input type="text" maxlength="30" id="inputUsername" class="form-control" autofocus
+                     [formControlName]="'username'" name="username" required/>
+              <div class="alert alert-danger"
+                   *ngIf="loginForm.get('username').errors?.required && loginForm.get('username').touched">Username is
+                required
+              </div>
+
+            </div>
+            <div class="form-label-group">
+              <label for="inputPassword">Password</label>
+              <input type="password" id="inputPassword" class="form-control" required [formControlName]="'password'"
+                     name="password">
+              <div class="alert alert-danger"
+                   *ngIf="loginForm.get('password').errors?.required && loginForm.get('password').touched">Password is
+                required
+              </div>
+
+            </div>
+            <div class="alert alert-danger" *ngIf="isLoginFailed==true">{{errorMessage}}</div>
+
+            <br>
+
+            <button class="btn btn-sm btn-primary btn-block text-uppercase" type="submit" [disabled]="!loginForm.valid">
+              Sign in
+            </button>
+
+            <hr class="my-4">
+
+            <div class="form-group">
+              <label>Create an account . </label>&nbsp;<a [routerLink]="['/signup']" routerLinkActive="active">Sign
+              up</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

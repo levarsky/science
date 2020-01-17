@@ -1,0 +1,29 @@
+<div class="row">
+
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+
+    <div class="card card-signin my-5">
+      <div class="card-body">
+        <h5 class="card-title text-center">Fields</h5>
+        <form [formGroup]="fieldGroup">
+
+          <div class="form-label-group">
+            <select multiple class="form-control" id="fieldSelect" [formControlName]="'fields'">
+              <option *ngFor="let payment of allFields"
+                      [value]="payment"> {{payment.name}} </option>
+            </select>
+          </div>
+
+          <br>
+
+          <button class="btn btn-sm btn-primary btn-block " (click)="onSubmitField()"> Send fields
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
