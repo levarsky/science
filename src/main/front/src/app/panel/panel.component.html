@@ -5,9 +5,8 @@
       <div id="navigation">
         <nav class="nav navPar">
           <a *ngIf="isAdmin" class="nav-link active hrefColor" [routerLink]="['adminpanel']" active>Admin panel</a>
-          <a *ngIf="isEditor" class="nav-link hrefColor" [routerLink]="['magazine']">New Magazine </a>
-          <a *ngIf="isEditor || isAdmin" class="nav-link hrefColor" [routerLink]="['magazineTasks']">Magazines</a>
-
+          <a *ngIf="isEditor || isAdmin || isReviewer" class="nav-link hrefColor" [routerLink]="['magazineTasks']">Magazines</a>
+          <a *ngIf="isEditor || isAdmin" class="nav-link hrefColor" [routerLink]="['magazine']">New Magazine </a>
         </nav>
       </div>
     </div>

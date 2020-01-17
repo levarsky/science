@@ -21,6 +21,7 @@ export class PanelComponent implements OnInit {
     let groups = this.authService.getLoggedInGroups();
 
     if (groups) {
+
       if (groups.includes("camunda-admin")) {
         this.isAdmin = true
       }

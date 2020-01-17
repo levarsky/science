@@ -43,4 +43,8 @@ public class UserMagazineService {
         return userMagazineRepository.findByMagazineIdAndRole(id,role).get();
     }
 
+    public List<UserMagazine> getAll(){
+       return userMagazineRepository.findAll();
+    }
+
 }

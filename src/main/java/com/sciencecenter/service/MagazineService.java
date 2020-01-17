@@ -33,12 +33,10 @@ public class MagazineService {
     @Autowired
     private UserMagazineService userMagazineService;
 
-
+    @Autowired
+    private RoleService roleService;
 
     public String startMagazineProcess() {
-
-
-        diagramService.authorize("editor");
 
         return diagramService.startProcess("add_magazine");
 
@@ -207,14 +205,38 @@ public class MagazineService {
 
         List<UserMagazine> userMagazines = user.getMagazines();
 
+        Role role = roleService.findByName("camunda-admin");
+
+        boolean isAdmin = false;
+
+        if(user.getRoles().contains(role)){
+            userMagazines = userMagazineService.getAll();
+            isAdmin = true;
+        }
+
         List<TaskDTO> magazines = new ArrayList<>();
+        ArrayList<Magazine> mags = new ArrayList<>();
 
         for(UserMagazine um : userMagazines){
+
+
 
             TaskDTO taskDTO = new TaskDTO();
             taskDTO.setName("all");
             taskDTO.getVariable().put("magazine",um.getMagazine());
-            magazines.add(taskDTO);
+
+            if (um.getMagazine().isActive() && !isAdmin){
+                if (!mags.contains(um.getMagazine())) {
+                    mags.add(um.getMagazine());
+                    magazines.add(taskDTO);
+                }
+            }else if (isAdmin){
+                if (!mags.contains(um.getMagazine())) {
+                    mags.add(um.getMagazine());
+                    magazines.add(taskDTO);
+                }
+            }
+
         }
 
         return magazines;

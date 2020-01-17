@@ -44,27 +44,23 @@ export class PanelMagazinesComponent implements OnInit {
 
   ngOnInit() {
 
-    this.authService.getGroups().subscribe(data => {
+    this.groups = this.authService.getLoggedInGroups();
 
-      this.showAll = false;
 
-      this.groups = data;
+    if (this.groups.includes("camunda-admin")) {
+      this.isEditor = false;
+      this.isAdmin = true;
+      this.title = 'Approve magazine';
+      this.initAdminTable();
+    } else if (this.groups.includes("editor")) {
+      this.initTable();
+      this.isEditor = true;
+      this.isAdmin = false;
+      this.title = 'Check and resubmit magazine';
+    } else if (this.groups.includes("reviewer")) {
+      this.initAll();
+    }
 
-      if (this.groups.includes("editor")) {
-        this.initTable();
-        this.isEditor = true;
-        this.isAdmin = false;
-        this.title = 'Check and resubmit magazine';
-      } else if (this.groups.includes("camunda_admin")) {
-        this.initAdminTable();
-        this.isEditor = false;
-        this.isAdmin = true;
-        this.title = 'Approve magazine';
-      } else {
-        this.initAll();
-      }
-
-    });
 
   }
 
@@ -134,6 +130,8 @@ export class PanelMagazinesComponent implements OnInit {
 
 
   initAdminTable() {
+
+    this.title = 'Check and approve';
 
     this.magazineService.getMagazinesForApprove().subscribe(data => {
       console.log(data);

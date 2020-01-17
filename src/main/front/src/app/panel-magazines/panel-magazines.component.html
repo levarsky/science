@@ -31,6 +31,7 @@
               <th scope="col">#</th>
               <th scope="col">ISSN</th>
               <th scope="col">Name</th>
+              <th scope="col">Active</th>
               <th scope="col"></th>
             </tr>
             </thead>
@@ -39,6 +40,7 @@
               <td>{{i + 1}}</td>
               <td>{{task.variable.magazine.issn}}</td>
               <td>{{task.variable.magazine.name}}</td>
+              <td>{{task.variable.magazine.active}}</td>
               <td>
                 <button class="btn" type="button" (click)="viewDetails(task.variable.magazine);" data-toggle="modal"
                         data-target="#exampleModal"><i

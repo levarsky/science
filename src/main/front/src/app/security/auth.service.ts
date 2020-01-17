@@ -75,7 +75,7 @@ export class AuthService {
   }
 
   getLoggedInGroups() {
-    let groups = sessionStorage.getItem('authenticatedGroups');
+    let groups = JSON.parse(sessionStorage.getItem('authenticatedGroups'));
     return groups;
   }
 
