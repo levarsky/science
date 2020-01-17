@@ -121,7 +121,20 @@ public class MagazineService {
 
         Magazine magazine = magazineRepository.findByISSN(issn);
 
+        String username = diagramService.getAuthUsername();
+
+        User user = userMagazineService.getByMagazineIdAndRole(magazine.getId(),"main_editor").getUser();
+
+        if(!user.getUsername().equals(username)){
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        }
+
+        if(magazine.isActive()){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Magazine is activated!");
+        }
+
         UserListDTO userListDTO = new UserListDTO();
+
 
         userListDTO.setEditors(userService.getUsers("editor",magazine.getFields()));
         userListDTO.setReviewers(userService.getUsers("reviewer",magazine.getFields()));

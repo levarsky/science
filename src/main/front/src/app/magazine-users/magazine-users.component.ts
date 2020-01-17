@@ -69,6 +69,15 @@ export class MagazineUsersComponent implements OnInit {
 
         });
 
+      },error=>{
+        this.failed = true;
+        this.errorMessage = error.error.message;
+
+        setTimeout(() => {
+          this.failed = false;
+          this.errorMessage = '';
+          window.location.href = 'home';
+        }, 4000);
       });
 
     });
