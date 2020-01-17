@@ -47,6 +47,8 @@ export class PanelMagazinesComponent implements OnInit {
     this.groups = this.authService.getLoggedInGroups();
 
 
+    this.showAll = false;
+
     if (this.groups.includes("camunda-admin")) {
       this.isEditor = false;
       this.isAdmin = true;

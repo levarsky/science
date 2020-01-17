@@ -12,6 +12,7 @@ import {RegistrationService} from "../service/registration.service";
 export class FieldAddComponent implements OnInit {
 
   @Output() objectToEmmit = new EventEmitter<object>();
+  @Output() backButton = new EventEmitter<boolean>();
 
   fieldGroup: FormGroup;
 
@@ -44,4 +45,7 @@ export class FieldAddComponent implements OnInit {
 
   }
 
+  back() {
+    this.backButton.emit(true);
+  }
 }

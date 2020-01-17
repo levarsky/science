@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03f13e78-bda3-4928-8b0d-85612e8aac29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/panel-magazines/panel-magazines.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/panel-magazines/panel-magazines.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/field-add/field-add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/field-add/field-add.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/field-add/field-add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/field-add/field-add.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/front/src/app/panel-magazines/panel-magazines.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/panel-magazines/panel-magazines.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/panel/panel.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/panel/panel.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/panel/panel.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/panel/panel.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/security/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/security/auth.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/MagazineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/MagazineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/UserMagazineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/UserMagazineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/registration/registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/registration/registration.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/registration/registration.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,22 +117,32 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@be5fda4" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@1c4c0e8c" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@6b0a43f9" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@178ebe1c" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@79aa5939" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@5dd03d85" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@449d85e1" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@33cb4ffd" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@42b7384b" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@5aab4176" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -158,12 +161,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579291223914</updated>
-      <workItem from="1579291227804" duration="4580000" />
+      <workItem from="1579291227804" duration="6477000" />
     </task>
+    <task id="LOCAL-00001" summary="Magazine panel , User">
+      <created>1579296478931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1579296478931</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Magazine panel , User" />
+    <option name="LAST_COMMIT_MESSAGE" value="Magazine panel , User" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="189" key="#Project_Structure" timestamp="1579291540357">
@@ -174,41 +191,49 @@
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
     <state x="560" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1920.1001@0.23.1920.1001" timestamp="1579292286920" />
-    <state width="1878" height="271" key="GridCell.Tab.0.bottom" timestamp="1579295710923">
+    <state x="565" y="126" key="CommitChangelistDialog2" timestamp="1579296475128">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.0.bottom/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710923" />
-    <state width="1878" height="271" key="GridCell.Tab.0.center" timestamp="1579295710922">
+    <state x="565" y="126" key="CommitChangelistDialog2/0.23.1920.1001@0.23.1920.1001" timestamp="1579296475128" />
+    <state width="1878" height="271" key="GridCell.Tab.0.bottom" timestamp="1579296551921">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.0.center/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710922" />
-    <state width="1878" height="271" key="GridCell.Tab.0.left" timestamp="1579295710922">
+    <state width="1878" height="271" key="GridCell.Tab.0.bottom/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551921" />
+    <state width="1878" height="271" key="GridCell.Tab.0.center" timestamp="1579296551920">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.0.left/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710922" />
-    <state width="1878" height="271" key="GridCell.Tab.0.right" timestamp="1579295710923">
+    <state width="1878" height="271" key="GridCell.Tab.0.center/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551920" />
+    <state width="1878" height="271" key="GridCell.Tab.0.left" timestamp="1579296551919">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.0.right/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710923" />
-    <state width="1878" height="271" key="GridCell.Tab.1.bottom" timestamp="1579295710925">
+    <state width="1878" height="271" key="GridCell.Tab.0.left/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551919" />
+    <state width="1878" height="271" key="GridCell.Tab.0.right" timestamp="1579296551920">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.1.bottom/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710925" />
-    <state width="1878" height="271" key="GridCell.Tab.1.center" timestamp="1579295710924">
+    <state width="1878" height="271" key="GridCell.Tab.0.right/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551920" />
+    <state width="1878" height="271" key="GridCell.Tab.1.bottom" timestamp="1579296551922">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.1.center/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710924" />
-    <state width="1878" height="271" key="GridCell.Tab.1.left" timestamp="1579295710924">
+    <state width="1878" height="271" key="GridCell.Tab.1.bottom/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551922" />
+    <state width="1878" height="271" key="GridCell.Tab.1.center" timestamp="1579296551922">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.1.left/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710924" />
-    <state width="1878" height="271" key="GridCell.Tab.1.right" timestamp="1579295710924">
+    <state width="1878" height="271" key="GridCell.Tab.1.center/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551922" />
+    <state width="1878" height="271" key="GridCell.Tab.1.left" timestamp="1579296551921">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
-    <state width="1878" height="271" key="GridCell.Tab.1.right/0.23.1920.1001@0.23.1920.1001" timestamp="1579295710924" />
+    <state width="1878" height="271" key="GridCell.Tab.1.left/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551921" />
+    <state width="1878" height="271" key="GridCell.Tab.1.right" timestamp="1579296551922">
+      <screen x="0" y="23" width="1920" height="1001" />
+    </state>
+    <state width="1878" height="271" key="GridCell.Tab.1.right/0.23.1920.1001@0.23.1920.1001" timestamp="1579296551922" />
     <state x="469" y="162" key="SettingsEditor" timestamp="1579291520558">
       <screen x="0" y="23" width="1920" height="1001" />
     </state>
     <state x="469" y="162" key="SettingsEditor/0.23.1920.1001@0.23.1920.1001" timestamp="1579291520558" />
+    <state x="560" y="263" key="Vcs.Push.Dialog.v2" timestamp="1579296491449">
+      <screen x="0" y="23" width="1920" height="1001" />
+    </state>
+    <state x="560" y="263" key="Vcs.Push.Dialog.v2/0.23.1920.1001@0.23.1920.1001" timestamp="1579296491449" />
   </component>
 </project>

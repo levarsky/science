@@ -149,7 +149,7 @@
   </div>
 
   <div *ngIf="fieldIsVisible">
-    <app-field-add (objectToEmmit)="objectToReceive($event)"></app-field-add>
+    <app-field-add (objectToEmmit)="objectToReceive($event)" (backButton)="backButton($event)"  ></app-field-add>
   </div>
 
   <div class="row d-flex justify-content-center">

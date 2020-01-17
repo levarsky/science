@@ -107,4 +107,10 @@ export class RegistrationComponent implements OnInit {
 
 
   }
+
+  backButton($event: boolean) {
+    this.fieldIsVisible = false;
+
+    this.signUpIsVisible = true;
+  }
 }
