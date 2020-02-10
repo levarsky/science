@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sciencecenter.model.*;
 import com.sciencecenter.repository.MagazineRepository;
+import org.camunda.bpm.engine.form.FormField;
 import org.camunda.bpm.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,12 +37,82 @@ public class MagazineService {
     @Autowired
     private RoleService roleService;
 
+    @Autowired
+    private FieldService fieldService;
+
     public String startMagazineProcess() {
 
         return diagramService.startProcess("add_magazine");
 
     }
 
+    public FormDTO startChooseMagazineProcess() {
+
+        FormDTO formDTO = diagramService.startProcessAndGetForm("issue_submit");
+
+
+       return magazinesForMagazineForm(formDTO);
+
+
+
+
+    }
+
+    public FormDTO getIssueDetailsForm(String processId){
+        FormDTO formDTO =  diagramService.getFormProcessIdTaskName(processId,"issue_info");
+        return fieldForMagazineForm(formDTO);
+    }
+
+    private FormDTO fieldForMagazineForm(FormDTO formDTO) {
+        List<Field> fields = fieldService.getAllFields();
+        for (FormField formField:formDTO.getFormFields()){
+
+            if(formField.getId().equals("field")){
+
+                HashMap<String,String> values = (HashMap<String,String>) formField.getType().getInformation("values");
+
+                values.clear();
+
+                for(Field field:fields){
+
+                    values.put(field.getName(),field.getName());
+
+                }
+
+            }
+
+        }
+
+        return formDTO;
+
+    }
+
+
+    public FormDTO magazinesForMagazineForm(FormDTO formDTO){
+
+        List<Magazine> magazines = magazineRepository.findAll();
+
+        for (FormField formField:formDTO.getFormFields()){
+
+            if(formField.getId().equals("magazine")){
+
+                HashMap<String,String> values = (HashMap<String,String>) formField.getType().getInformation("values");
+
+                values.clear();
+
+                for(Magazine magazine:magazines){
+
+                    values.put(magazine.getISSN(),magazine.getName());
+
+                }
+
+            }
+
+        }
+
+        return formDTO;
+
+    }
 
     public void checkMagazine(Magazine magazine){
 
@@ -154,6 +225,8 @@ public class MagazineService {
 
     }
 
+
+
     public List<TaskDTO> getMagazines(){
 
         List<TaskDTO> taskDTOS = diagramService.getMagazineTasks("admin_approve","camunda-admin");
@@ -261,6 +334,16 @@ public class MagazineService {
         Magazine magazine = magazineRepository.findByISSN(issn);
 
         return getERMagazine(issn);
+
+    }
+
+    public boolean existsBy(Long magazineId){
+        User user = userService.getUser(diagramService.getAuthUsername());
+        return userMagazineService.existsBy(magazineId,user.getId(),"membership");
+    }
+
+    public void SubmitIssue(){
+
 
     }
 

@@ -2,6 +2,7 @@ package com.sciencecenter.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sciencecenter.model.FormDTO;
 import com.sciencecenter.model.Magazine;
 import com.sciencecenter.model.TaskDTO;
 import com.sciencecenter.model.User;
@@ -69,6 +70,56 @@ public class DiagramService {
 
     }
 
+    public FormDTO startProcessAndGetForm(String processName){
+
+        ProcessInstance processInstance = runtimeService.startProcessInstanceByKey(processName);
+        System.out.println(taskService.createTaskQuery().processInstanceId(processInstance.getId()).list());
+        Task task = taskService.createTaskQuery().processInstanceId(processInstance.getId()).list().get(0);
+        TaskFormData tfd = formService.getTaskFormData(task.getId());
+        List<FormField> properties = tfd.getFormFields();
+
+        FormDTO formDTO = new FormDTO();
+
+        formDTO.setFormFields(properties);
+        formDTO.setProcessInstanceId(processInstance.getId());
+        formDTO.setTaskId(task.getId());
+
+        //createUser();
+
+        return formDTO;
+
+    }
+
+    public FormDTO getFormProcessIdTaskName(String processId,String taskName){
+
+        Task task = getTask(processId,0,taskName);
+
+        TaskFormData tfd = formService.getTaskFormData(task.getId());
+        List<FormField> properties = tfd.getFormFields();
+
+        FormDTO formDTO = new FormDTO();
+
+        formDTO.setFormFields(properties);
+        formDTO.setProcessInstanceId(processId);
+        formDTO.setTaskId(task.getId());
+
+        return formDTO;
+
+    }
+
+    public void submitFormFields(Object object,String taskId,String varName){
+
+        ObjectMapper mapper = new ObjectMapper();
+        HashMap<String, Object> map = mapper.convertValue(object, new TypeReference<HashMap<String, Object>>() {});
+
+        Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
+        setVariable(task.getProcessInstanceId(),varName,object);
+
+        formService.submitTaskForm(taskId, map);
+    }
+
+
+
     public boolean authorize(String group){
         List<String> groupIds = identityService.getCurrentAuthentication().getGroupIds();
 
@@ -76,6 +127,11 @@ public class DiagramService {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Not allowed!");
 
         return true;
+    }
+
+    public Task getTask(String taskId){
+
+        return taskService.createTaskQuery().taskId(taskId).singleResult();
     }
 
     public Task getTask(String processInstanceId,int i,String definitionKey){
@@ -183,25 +239,25 @@ public class DiagramService {
 
     public void createUser(){
 
-        Group group =identityService.newGroup("editor");
-        group.setName("editor");
-        group.setType(Groups.GROUP_TYPE_WORKFLOW);
-        identityService.saveGroup(group);
-
-        Group group2 =identityService.newGroup("reviewer");
-        group2.setName("reviewer");
-        group2.setType(Groups.GROUP_TYPE_WORKFLOW);
-        identityService.saveGroup(group2);
-
-        Group group1 =identityService.newGroup("user");
-        group1.setName("user");
-        group1.setType(Groups.GROUP_TYPE_WORKFLOW);
-        identityService.saveGroup(group1);
+//        Group group =identityService.newGroup("editor");
+//        group.setName("editor");
+//        group.setType(Groups.GROUP_TYPE_WORKFLOW);
+//        identityService.saveGroup(group);
+//
+//        Group group2 =identityService.newGroup("reviewer");
+//        group2.setName("reviewer");
+//        group2.setType(Groups.GROUP_TYPE_WORKFLOW);
+//        identityService.saveGroup(group2);
+//
+//        Group group1 =identityService.newGroup("user");
+//        group1.setName("user");
+//        group1.setType(Groups.GROUP_TYPE_WORKFLOW);
+//        identityService.saveGroup(group1);
 //
 ////        identityService.createMembership("pera","user");
         Authorization authorization = authorizationService.createNewAuthorization(Authorization.AUTH_TYPE_GRANT);
 //
-        authorization.setGroupId("editor");
+        authorization.setGroupId("author");
         authorization.addPermission(Permissions.CREATE_INSTANCE);
         authorization.setResource(Resources.PROCESS_DEFINITION);
         authorization.setResourceId("*");
@@ -210,7 +266,7 @@ public class DiagramService {
 //
         Authorization authorization2 = authorizationService.createNewAuthorization(Authorization.AUTH_TYPE_GRANT);
 
-        authorization2.setGroupId("editor");
+        authorization2.setGroupId("author");
         authorization2.addPermission(Permissions.CREATE);
         authorization2.addPermission(Permissions.READ);
         authorization2.addPermission(Permissions.UPDATE);

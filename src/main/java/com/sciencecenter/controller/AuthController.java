@@ -38,12 +38,12 @@ public class AuthController {
     @RequestMapping(value="/regProcess",method = RequestMethod.GET)
     public ResponseEntity<?> runProcess() {
 
-        return new ResponseEntity<>(Collections.singletonMap("processId",diagramService.startProcess("Registration_process")), HttpStatus.OK);
+        return new ResponseEntity<>(diagramService.startProcessAndGetForm("Registration_process"), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/signUp",method = RequestMethod.POST)
-    public ResponseEntity<String> userSignUp(@RequestParam(value = "processId") String processId , @RequestBody User user) {
-        userService.signUp(processId,user);
+    public ResponseEntity<String> userSignUp(@RequestParam(value = "taskId") String taskId , @RequestBody User user) {
+        userService.signUp(taskId,user);
         return new ResponseEntity<>( HttpStatus.OK);
     }
 

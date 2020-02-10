@@ -17,4 +17,6 @@ public interface UserMagazineRepository extends JpaRepository<UserMagazine,Long>
     void deleteByMagazineIdAndRole (Long id,String role);
 
     Optional<UserMagazine> findByMagazineIdAndRole(Long magazineId,String role);
+
+    boolean existsByMagazineIdAndUserIdAndRole(Long magazineId,Long userId,String role);
 }

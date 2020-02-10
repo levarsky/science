@@ -33,6 +33,10 @@ public class UserMagazineService {
 
     }
 
+    public boolean existsBy(Long magazineId,Long userId,String role){
+        return userMagazineRepository.existsByMagazineIdAndUserIdAndRole(magazineId,userId,role);
+    }
+
     public UserMagazine saveUserMagazine(UserMagazine userMagazine){
         return userMagazineRepository.save(userMagazine);
     }

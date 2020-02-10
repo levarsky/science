@@ -28,18 +28,16 @@ public class UserService {
     @Autowired
     private RoleService roleService;
 
-    public void signUp(String processId, User user){
+    public void signUp(String taskId, User user){
 
         ObjectMapper mapper = new ObjectMapper();
         HashMap<String, Object> map = mapper.convertValue(user, new TypeReference<HashMap<String, Object>>() {});
 
-        Task task= diagramService.getTask(processId,0,"user_task_form");
-
-        diagramService.setVariable(processId,"signUp",user);
-        //diagramService.completeTask(task.getId(),map);
-        diagramService.submitTask(task.getId(),map);
-
+        Task task= diagramService.getTask(taskId);
+        diagramService.setVariable(task.getProcessInstanceId(),"signUp",user);
+        diagramService.submitTask(taskId,map);
     }
+
 
     public void checkAuth(String user){
         if (!userRepository.existsByUsername(user)) {

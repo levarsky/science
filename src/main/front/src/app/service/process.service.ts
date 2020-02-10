@@ -17,5 +17,14 @@ export class ProcessService {
     return this.http.get(this.basicPath + "auth/regProcess");
   }
 
+  submitTask(object,taskId,varName):Observable<any>{
+    let param = new HttpParams();
+    param = param.append("taskId",taskId);
+    param = param.append("varName",varName);
+    console.log(object)
+    return this.http.post(this.basicPath + "process/submitTask",object,{params:param});
+  }
+
+
 
 }

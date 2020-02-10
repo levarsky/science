@@ -18,6 +18,10 @@ export class RegistrationComponent implements OnInit {
   fieldIsVisible: boolean = false;
   signUpIsVisible = true;
 
+  formDTO;
+  formFields;
+
+
   user: User;
 
   processId: string;
@@ -56,6 +60,7 @@ export class RegistrationComponent implements OnInit {
     this.processService.process().subscribe(data => {
       console.log(data);
       this.processId = data.processId;
+      this.formFields = data.formFields;
     });
 
 
@@ -70,6 +75,12 @@ export class RegistrationComponent implements OnInit {
     this.signUpIsVisible = false;
 
     this.user = this.signUpForm.value;
+
+  }
+
+  onSubmitDynamic(f){
+    console.log(f)
+
 
   }
 

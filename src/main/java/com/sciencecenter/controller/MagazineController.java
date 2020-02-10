@@ -33,11 +33,22 @@ public class MagazineController {
     }
 
 
+    @RequestMapping(value="/chooseMagazineProcess",method = RequestMethod.GET)
+    public ResponseEntity<?> chooseMagazineProcess() {
+        return new ResponseEntity<>(magazineService.startChooseMagazineProcess(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value="/issueDetailsForm",method = RequestMethod.GET)
+    public ResponseEntity<?> issueDetailsForm(@RequestParam(value = "processId") String processId) {
+        return new ResponseEntity<>(magazineService.getIssueDetailsForm(processId), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/submitMagazine",method = RequestMethod.POST)
     public ResponseEntity<String> submitMagazine(@RequestParam(value = "processId") String processId , @RequestBody Magazine magazine) {
         magazineService.submitMagazine(processId,magazine);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 
     @RequestMapping(value = "/submitUserMagazine",method = RequestMethod.POST)
     public ResponseEntity<?> submitUserMagazine(@RequestParam(value = "processId") String processId , @RequestBody UserListDTO userListDTO) {

@@ -11,6 +11,8 @@ import {PanelMagazinesComponent} from "./panel-magazines/panel-magazines.compone
 import {AuthGuard} from "./security/auth.guard";
 import {LoginGuard} from "./security/login.guard";
 import {AdminPanelMagazineComponent} from "./admin-panel-magazine/admin-panel-magazine.component";
+import {IssueComponent} from "./issue/issue.component";
+import {IssueDetailsComponent} from "./issue-details/issue-details.component";
 
 
 const routes: Routes = [
@@ -42,6 +44,14 @@ const routes: Routes = [
         component: MagazineComponent,
         canActivate: [AuthGuard],
         data: {roles: ["camunda-admin", "editor"]}
+      },
+      {
+        path: 'issue',
+        component: IssueComponent,
+      },
+      {
+        path: 'issueDetails',
+        component: IssueDetailsComponent,
       },
       {
         path: 'magazineTasks',

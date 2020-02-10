@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Issue</h5>
+
+          <form #f="ngForm" (ngSubmit)="onSubmitDynamic(f)">
+            <div *ngFor="let field of formFields">
+
+              <div class="form-label-group">
+
+                <label for={{field.id}}>{{field.label}}</label>
+
+                <input class="form-control" type="text" name={{field.id}} ngModel *ngIf="field.type.name=='string'">
+                <input class="form-control" type="checkbox" name={{field.id}} ngModel
+                       *ngIf="field.type.name=='boolean'">
+                <input class="form-control" type="number" name={{field.id}} ngModel *ngIf="field.type.name=='long'">
+                <select class="form-control" name={{field.label}} ngModel *ngIf="field.type.name=='enum'">
+                  <option *ngFor="let val of enumValues" value={{val}}>
+                    {{field.type.values[val]}}
+                  </option>
+                </select>
+
+
+
+              </div>
+
+            </div>
+
+            <hr class="my-4">
+
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Next
+            </button>
+
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

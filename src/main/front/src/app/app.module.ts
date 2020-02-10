@@ -18,6 +18,8 @@ import {MagazineUsersComponent} from './magazine-users/magazine-users.component'
 import {PanelMagazinesComponent} from './panel-magazines/panel-magazines.component';
 import {AdminPanelMagazineComponent} from './admin-panel-magazine/admin-panel-magazine.component';
 import {RouterStateSnapshot} from "@angular/router";
+import { IssueComponent } from './issue/issue.component';
+import { IssueDetailsComponent } from './issue-details/issue-details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import {RouterStateSnapshot} from "@angular/router";
     MagazineUsersComponent,
     PanelMagazinesComponent,
     AdminPanelMagazineComponent,
+    IssueComponent,
+    IssueDetailsComponent,
 
   ],
   imports: [

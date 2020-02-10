@@ -17,6 +17,16 @@ export class MagazineService {
     return this.http.get(this.basicPath + "/magazineProcess");
   }
 
+  getChooseMagazineProcess(): Observable<any> {
+    return this.http.get(this.basicPath + "/chooseMagazineProcess");
+  }
+
+  getIssueDetailsForm(processId): Observable<any> {
+    let param = new HttpParams();
+    param = param.append("processId", processId);
+    return this.http.get(this.basicPath + "/issueDetailsForm",{params:param});
+  }
+
   getMagazineUsers(issn): Observable<any> {
     let param = new HttpParams();
     param = param.append("issn", issn);
