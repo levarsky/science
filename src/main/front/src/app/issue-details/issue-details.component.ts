@@ -48,4 +48,14 @@ export class IssueDetailsComponent implements OnInit {
 
   }
 
+  onSubmitDynamic(f) {
+
+    console.log(f.value)
+
+    this.processService.submitTask(f.value,this.formFieldsDto.taskId,"issue_info").subscribe(data=>{
+      console.log(data);
+
+    })
+
+  }
 }

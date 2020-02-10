@@ -17,6 +17,8 @@ public class OpenAccessCheck implements JavaDelegate {
 
         System.out.println(delegateExecution.getVariables().toString());
 
+        delegateExecution.setVariable("isFormat",true);
+
         Magazine magazine = magazineService.findByISSN(delegateExecution.getVariable("magazine").toString());
 
 

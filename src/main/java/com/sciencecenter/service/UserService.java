@@ -103,6 +103,11 @@ public class UserService {
 
     }
 
+    public User getUserAuth(){
+
+        return getUser(diagramService.getAuthUsername());
+    }
+
     public List<User> getUsers(String roleName, List<Field> fields){
 
         Role role = roleService.findByName(roleName);

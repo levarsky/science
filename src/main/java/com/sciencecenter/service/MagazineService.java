@@ -188,6 +188,11 @@ public class MagazineService {
 
     }
 
+    public UserMagazine getUserMagazine(Long id,String role){
+     return   userMagazineService.getByMagazineIdAndRole(id,role);
+    }
+
+
     public UserListDTO getMagazineUsers(String issn){
 
         Magazine magazine = magazineRepository.findByISSN(issn);
