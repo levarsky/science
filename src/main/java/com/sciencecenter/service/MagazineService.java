@@ -63,6 +63,11 @@ public class MagazineService {
         return fieldForMagazineForm(formDTO);
     }
 
+    public FormDTO getPayentForm(String processId){
+        FormDTO formDTO =  diagramService.getFormProcessIdTaskName(processId,"pay");
+        return fieldForMagazineForm(formDTO);
+    }
+
     private FormDTO fieldForMagazineForm(FormDTO formDTO) {
         List<Field> fields = fieldService.getAllFields();
         for (FormField formField:formDTO.getFormFields()){

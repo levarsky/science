@@ -43,6 +43,11 @@ public class MagazineController {
         return new ResponseEntity<>(magazineService.getIssueDetailsForm(processId), HttpStatus.OK);
     }
 
+    @RequestMapping(value="/paymentForm",method = RequestMethod.GET)
+    public ResponseEntity<?> paymentForm(@RequestParam(value = "processId") String processId) {
+        return new ResponseEntity<>(magazineService.getPayentForm(processId), HttpStatus.OK);
+    }
+
     @RequestMapping(value = "/submitMagazine",method = RequestMethod.POST)
     public ResponseEntity<String> submitMagazine(@RequestParam(value = "processId") String processId , @RequestBody Magazine magazine) {
         magazineService.submitMagazine(processId,magazine);

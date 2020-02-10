@@ -3,21 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="03f13e78-bda3-4928-8b0d-85612e8aac29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/issue-details/issue-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/issue-details/issue-details.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/issue-details/issue-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/issue-details/issue-details.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/configuration/EmailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/configuration/EmailConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/EmailMainEditorAuthor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/EmailMainEditorAuthor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/front/src/app/issue/issue.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/front/src/app/issue/issue.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/controller/MagazineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/controller/MagazineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/DiagramService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/DiagramService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/MagazineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/MagazineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/OpenAccessCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/OpenAccessCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sciencecenter/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/issue_submit.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/issue_submit.bpmn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sciencecenter/configuration/EmailConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sciencecenter/configuration/EmailConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/EmailMainEditorAuthor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/EmailMainEditorAuthor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/MagazineService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/MagazineService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/MagazineService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/MagazineService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/OpenAccessCheck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/OpenAccessCheck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sciencecenter/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/issue_submit.bpmn" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/issue_submit.bpmn" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1579291223914</updated>
       <workItem from="1579291227804" duration="8574000" />
-      <workItem from="1581158664451" duration="40848000" />
+      <workItem from="1581158664451" duration="41679000" />
     </task>
     <task id="LOCAL-00001" summary="Magazine panel , User">
       <created>1579296478931</created>
@@ -207,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581345453316</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Issue">
+      <created>1581348843524</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1581348843524</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

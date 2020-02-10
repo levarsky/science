@@ -45,6 +45,7 @@ export class IssueComponent implements OnInit {
 
     console.log(f.value);
 
+
     this.processService.submitTask(f.value,this.formFieldsDto.taskId,"magazineChoice").subscribe(data=>{
       console.log(data);
 

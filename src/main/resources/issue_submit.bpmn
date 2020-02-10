@@ -30,7 +30,7 @@
       </bpmn:endEvent>
       <bpmn:sequenceFlow id="SequenceFlow_1l9pwzr" sourceRef="StartEvent_04vduaa" targetRef="pay" />
       <bpmn:sequenceFlow id="SequenceFlow_0txighj" sourceRef="pay" targetRef="EndEvent_0il8m03" />
-      <bpmn:userTask id="pay" name="Pay" camunda:candidateGroups="author">
+      <bpmn:userTask id="pay" name="Pay" camunda:assignee="${starter}">
         <bpmn:extensionElements>
           <camunda:formData>
             <camunda:formField id="pay" label="Pay" type="boolean" />

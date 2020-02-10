@@ -135,6 +135,8 @@ public class DiagramService {
     }
 
     public Task getTask(String processInstanceId,int i,String definitionKey){
+        if (taskService.createTaskQuery().taskDefinitionKey(definitionKey).processInstanceId(processInstanceId).list().isEmpty())
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         System.out.println("GET TASK "+ taskService.createTaskQuery().taskDefinitionKey(definitionKey).processInstanceId(processInstanceId).list().get(i));
         Task task = taskService.createTaskQuery().taskDefinitionKey(definitionKey).processInstanceId(processInstanceId).list().get(i);
         return task ;
